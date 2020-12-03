@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:workouttrackerapps/dashboard.dart';
-//import 'package:workouttrackerapps/dashboard.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'package:workouttrackerapps/firestore/equipment.dart';
-//import 'package:workouttrackerapps/firestore/equipmentscreen.dart';
 import 'firestoreservice.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -199,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () => {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
+                    MaterialPageRoute(builder: (context) => MainPage()),
                     )
                     },),
               ),
@@ -227,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () => {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Dashboard()),
+                    MaterialPageRoute(builder: (context) => MainPage()),
                     )
                     },),
               ),

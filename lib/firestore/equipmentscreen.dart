@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:workouttrackerapps/dashboard.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'equipment.dart';
 import 'firestoreservice.dart';
 
@@ -234,7 +234,7 @@ class _EquipmentScreenState extends State<EquipmentScreen> {
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()),
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),
                     );
                     }),
               ),

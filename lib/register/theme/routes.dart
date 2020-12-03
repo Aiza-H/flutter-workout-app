@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:workouttrackerapps/register/signin.dart';
-import 'package:workouttrackerapps/dashboard.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'package:workouttrackerapps/register/views/login_screen.dart';
 import 'package:workouttrackerapps/register/views/register.dart';
 
@@ -15,7 +14,7 @@ class AppRoutes {
     return {
       authLogin: (context) => Login(),
       authRegister: (context) => Register(),
-      menu: (context) => Dashboard(),
+      menu: (context) => MainPage(),
     };
   }
 }

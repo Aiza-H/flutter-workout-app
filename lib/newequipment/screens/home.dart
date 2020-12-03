@@ -15,10 +15,37 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('CHOOSE WORKOUT TYPE'),
-            ),
+     return Scaffold
+    (
+      appBar: AppBar
+      (
+        elevation: 0.0,
+        backgroundColor: Colors.grey[200],
+        leading: IconButton
+        (
+          color: Colors.black,
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+        ),
+        title: Text('WORKOUT SUGGESTION', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        // actions: <Widget>
+        // [
+        //   Container
+        //   (
+        //     margin: EdgeInsets.only(right: 8.0),
+        //     child: Row
+        //     (
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: <Widget>
+        //       [
+        //         Text('beclothed.com', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.0)),
+        //         Icon(Icons.arrow_drop_down, color: Colors.black54)
+        //       ],
+        //     ),
+        //   )
+        // ],
+      ),
             body: Column(
               children: <Widget>[
                 SizedBox(
@@ -31,9 +58,9 @@ class _HomeState extends State<Home> {
                   height: 15.0,
                 ),
                 Text(
-                  'CATEGORY LIST',
+                  'WHAT IS YOUR GOAL?',
                   style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 16.0,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.w800),
                 ),
@@ -46,7 +73,7 @@ class _HomeState extends State<Home> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       CardCategory(
-                        title: 'STRENGTH',
+                        title: 'GAIN MUSCLE',
                         onTap: () {
                           Navigator.push(
                             context,
@@ -59,7 +86,7 @@ class _HomeState extends State<Home> {
                         image: 'assets/images/strengthsicon.jpg',
                       ),
                       CardCategory(
-                        title: 'CARDIO',
+                        title: 'IMPROVE CARDIO',
                         onTap: () {
                           Navigator.push(
                             context,

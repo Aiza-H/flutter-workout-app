@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:workouttrackerapps/qrcode/generate.dart';
 import 'package:workouttrackerapps/qrcode/scan.dart';
 
-import '../main.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,24 +14,36 @@ class _HomePageState extends State<HomePage> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Scan QR Code"),
-        centerTitle: true,
-        backgroundColor: Colors.purple[900],
-        actions: <Widget>[
-                    FlatButton(
-                      textColor: Colors.white,
-                      child: const Text("LOGOUT"),
-                       onPressed: () {
-                          _signOut().whenComplete(() {
-                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                           builder: (context) => MyApp()));
-                  });
-                },
-             )
-        ],
-
+    return Scaffold
+    (
+      appBar: AppBar
+      (
+        elevation: 0.0,
+        backgroundColor: Colors.grey[200],
+        leading: IconButton
+        (
+          color: Colors.black,
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+        ),
+        title: Text('SCAN QR CODE', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        // actions: <Widget>
+        // [
+        //   Container
+        //   (
+        //     margin: EdgeInsets.only(right: 8.0),
+        //     child: Row
+        //     (
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: <Widget>
+        //       [
+        //         Text('beclothed.com', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.0)),
+        //         Icon(Icons.arrow_drop_down, color: Colors.black54)
+        //       ],
+        //     ),
+        //   )
+        // ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,

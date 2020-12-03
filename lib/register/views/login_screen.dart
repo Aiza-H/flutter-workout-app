@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:workouttrackerapps/dashboard.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'package:workouttrackerapps/register/views/register.dart';
 
 class Login extends StatefulWidget {
@@ -134,7 +134,7 @@ class _LoginViewState extends State<Login> {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               prefs.setString('displayName', user.displayName);
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => Dashboard()));
+                        builder: (context) => MainPage()));
             }
           } catch (e) {
             print(e);

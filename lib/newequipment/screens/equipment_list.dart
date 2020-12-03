@@ -25,10 +25,37 @@ class _EquipmentListState extends State<EquipmentList> {
             color: Colors.white,
           );
         } else {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('EQUIPMENT TYPE'),
-            ),
+          return Scaffold
+    (
+      appBar: AppBar
+      (
+        elevation: 0.0,
+        backgroundColor: Colors.grey[200],
+        leading: IconButton
+        (
+          color: Colors.black,
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+        ),
+        title: Text('GYM EQUIPMENT', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        // actions: <Widget>
+        // [
+        //   Container
+        //   (
+        //     margin: EdgeInsets.only(right: 8.0),
+        //     child: Row
+        //     (
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: <Widget>
+        //       [
+        //         Text('beclothed.com', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.0)),
+        //         Icon(Icons.arrow_drop_down, color: Colors.black54)
+        //       ],
+        //     ),
+        //   )
+        // ],
+      ),
             body: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

@@ -9,9 +9,36 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final exerciseProvider = Provider.of<EntryProvider>(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Exercise Log'),
+    return Scaffold
+    (
+      appBar: AppBar
+      (
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        leading: IconButton
+        (
+          color: Colors.black,
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+        ),
+        title: Text('EXERCISE LOG', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        // actions: <Widget>
+        // [
+        //   Container
+        //   (
+        //     margin: EdgeInsets.only(right: 8.0),
+        //     child: Row
+        //     (
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.center,
+        //       children: <Widget>
+        //       [
+        //         Text('beclothed.com', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.0)),
+        //         Icon(Icons.arrow_drop_down, color: Colors.black54)
+        //       ],
+        //     ),
+        //   )
+        // ],
       ),
       body: StreamBuilder<List<Entry>>(
           stream: exerciseProvider.entries,

@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:workouttrackerapps/dashboard.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'package:workouttrackerapps/register/views/login_screen.dart';
 
 class Register extends StatefulWidget {
@@ -164,7 +164,7 @@ class _RegisterViewState extends State<Register> {
             updateUser.updateProfile(displayName: _usernameController.text);
             userSetup(_usernameController.text);
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => Dashboard()));
+                        builder: (context) => MainPage()));
           } on FirebaseAuthException catch (e) {
             if (e.code == 'weak-password') {
               print('The password provided is too weak.');

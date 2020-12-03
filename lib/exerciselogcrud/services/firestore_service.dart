@@ -7,7 +7,7 @@ class FirestoreService {
     //Get Entries
     Stream<List<Entry>> getEntries(){
       return _db
-        .collection('entries')
+        .collection('activity')
         .snapshots()
         .map((snapshot) => snapshot.docs
         .map((doc) => Entry.fromJson(doc.data()))
@@ -19,7 +19,7 @@ class FirestoreService {
       var options = SetOptions(merge:true);
 
       return _db
-        .collection('entries')
+        .collection('activity')
         .doc(exercise.exerciseId)
         .set(exercise.toMap(),options);
     }
@@ -27,7 +27,7 @@ class FirestoreService {
     //Delete
     Future<void> removeEntry(String exerciseId){
       return _db
-        .collection('entries')
+        .collection('activitiy')
         .doc(exerciseId)
         .delete();
     }

@@ -17,6 +17,8 @@ class _EntryScreenState extends State<EntryScreen> {
 
   final exerciseController = TextEditingController();
   final levelController = TextEditingController();
+  final setsController = TextEditingController();
+  final repsController = TextEditingController();
 
   @override
   void dispose() {
@@ -32,6 +34,8 @@ class _EntryScreenState extends State<EntryScreen> {
       //Edit
       exerciseController.text = widget.exercise.exercise;
       levelController.text = widget.exercise.level;
+      setsController.text = widget.exercise.sets;
+      repsController.text = widget.exercise.reps;
 
       exerciseProvider.loadAll(widget.exercise);
     } else {
@@ -47,8 +51,8 @@ class _EntryScreenState extends State<EntryScreen> {
     final exerciseProvider = Provider.of<EntryProvider>(context);
  
     return Scaffold(  
-      appBar: AppBar(title: Text(formatDate(exerciseProvider.date, [MM, ' ', d, ', ', yyyy]))
-      ,actions: [
+      appBar: AppBar(backgroundColor: Colors.grey,title: Text(formatDate(exerciseProvider.date, [MM, ' ', d, ', ', yyyy])),
+      actions: [
         IconButton(  
           icon: Icon(Icons.calendar_today),
           onPressed: (){
@@ -81,6 +85,24 @@ class _EntryScreenState extends State<EntryScreen> {
               minLines: 1,
               onChanged: (String value) => exerciseProvider.changeLevel = value,
               controller: levelController,
+            ),
+            TextField(  
+              decoration: InputDecoration(  
+                labelText: 'Sets', border: InputBorder.none,
+              ),
+              maxLines: 3,
+              minLines: 1,
+              onChanged: (String value) => exerciseProvider.changeSets = value,
+              controller: setsController,
+            ),
+            TextField(  
+              decoration: InputDecoration(  
+                labelText: 'Reps', border: InputBorder.none,
+              ),
+              maxLines: 3,
+              minLines: 1,
+              onChanged: (String value) => exerciseProvider.changeReps = value,
+              controller: repsController,
             ),
             RaisedButton(  
               color: Theme.of(context).accentColor,

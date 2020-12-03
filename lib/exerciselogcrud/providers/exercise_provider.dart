@@ -8,6 +8,8 @@ class EntryProvider with ChangeNotifier {
   DateTime _date;
   String _exercise;
   String _level;
+  String _sets;
+  String _reps;
   String _exerciseId;
   var uuid = Uuid();
 
@@ -15,6 +17,8 @@ class EntryProvider with ChangeNotifier {
   DateTime get date => _date;
   String get exercise => _exercise;
   String get level => _level;
+  String get sets => _sets;
+  String get reps => _reps;
   Stream<List<Entry>> get entries => firestoreService.getEntries();
 
   //Setters
@@ -33,17 +37,31 @@ class EntryProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  set changeSets(String sets){
+    _sets = sets;
+    notifyListeners();
+  }
+
+  set changeReps(String reps){
+    _reps = reps;
+    notifyListeners();
+  }
+
   //Functions
   loadAll(Entry exercise){
     if (exercise != null){
       _date = DateTime.parse(exercise.date);
       _exercise =exercise.exercise;
       _level =exercise.level;
+      _sets =exercise.sets;
+      _reps =exercise.reps;
       _exerciseId = exercise.exerciseId;
     } else {
       _date = DateTime.now();
       _exercise = null;
       _level = null;
+      _sets = null;
+      _reps = null;
       _exerciseId = null;
     }
   }
@@ -51,12 +69,12 @@ class EntryProvider with ChangeNotifier {
   saveEntry(){
     if (_exerciseId == null){
       //Add
-      var newEntry = Entry(date: _date.toIso8601String(), exercise: _exercise, level: _level, exerciseId: uuid.v1());
+      var newEntry = Entry(date: _date.toIso8601String(), exercise: _exercise, level: _level, sets: _sets, reps: _reps,exerciseId: uuid.v1());
       print(newEntry.exercise);
       firestoreService.setEntry(newEntry);
     } else {
       //Edit
-      var updatedEntry = Entry(date: _date.toIso8601String(), exercise: _exercise, level: _level, exerciseId: _exerciseId);
+      var updatedEntry = Entry(date: _date.toIso8601String(), exercise: _exercise, level: _level, sets: _sets, reps: _reps, exerciseId: _exerciseId);
       firestoreService.setEntry(updatedEntry);
     }
   }
