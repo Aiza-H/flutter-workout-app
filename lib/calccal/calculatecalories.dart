@@ -41,7 +41,7 @@ class _CalculateCaloriesState extends State<CalculateCalories> {
                   stream: FirebaseFirestore.instance.collection("exercise").snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData)
-                      const Text("Loading.....");
+                      return Text("Loading.....");
                     else {
                       List<DropdownMenuItem> exerciseItems = [];
                       for (int i = 0; i < snapshot.data.docs.length; i++) {
