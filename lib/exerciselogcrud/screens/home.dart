@@ -43,6 +43,8 @@ class HomeScreen extends StatelessWidget {
       body: StreamBuilder<List<Entry>>(
           stream: exerciseProvider.entries,
           builder: (context, snapshot) {
+            if (!snapshot.hasData)
+                      return Text("Loading.....");
             return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) {

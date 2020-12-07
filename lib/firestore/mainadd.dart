@@ -170,15 +170,15 @@ class _MyHomePageState extends State<MyHomePage> {
       height: 80.0,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: [
-              const Color(0xFF4A148C),
-              const Color(0xFF4A148C),
-            ],
-            begin: const FractionalOffset(0.0, 0.0),
-            end: const FractionalOffset(1.0, 0.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp),
+        // gradient: LinearGradient(
+        //     colors: [
+        //       const Color(0xFF4A148C),
+        //       const Color(0xFF4A148C),
+        //     ],
+        //     begin: const FractionalOffset(0.0, 0.0),
+        //     end: const FractionalOffset(1.0, 0.0),
+        //     stops: [0.0, 1.0],
+        //     tileMode: TileMode.clamp),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 16.0),

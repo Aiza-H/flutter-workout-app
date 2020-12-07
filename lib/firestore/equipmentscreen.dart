@@ -210,14 +210,15 @@ class _EquipmentScreenState extends State<EquipmentScreen> {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: [
+            begin:  Alignment(0.0, 0.0),
+            end:  Alignment(1.0, 0.0),
+            colors:[
               const Color(0xFFFA7397),
               const Color(0xFFFDDE42),
             ],
-            begin: const FractionalOffset(0.0, 0.0),
-            end: const FractionalOffset(1.0, 0.0),
             stops: [0.0, 1.0],
-            tileMode: TileMode.clamp),
+            tileMode: TileMode.clamp
+            ),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 16.0),
