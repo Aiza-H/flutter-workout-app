@@ -1,5 +1,5 @@
-import 'package:workouttrackerapps/newequipment/models/equipments.dart';
-import 'package:workouttrackerapps/newequipment/services/db_query.dart';
+import 'package:workouttrackerapps/gymequipment/models/equipments.dart';
+import 'package:workouttrackerapps/gymequipment/services/db_query.dart';
 import 'package:flutter/material.dart';
 
 class EquipmentDetail extends StatefulWidget {
@@ -28,14 +28,14 @@ class _EquipmentDetailState extends State<EquipmentDetail> {
       appBar: AppBar
       (
         elevation: 0.0,
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.deepPurple,
         leading: IconButton
         (
           color: Colors.black,
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        title: Text('EXERCISE DETAILS', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        title: Text('EXERCISE DETAILS', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
         // actions: <Widget>
         // [
         //   Container

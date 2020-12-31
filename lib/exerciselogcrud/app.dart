@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => EntryProvider(),
+      create: (context) => ExerciseProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
           home: HomeScreen(),

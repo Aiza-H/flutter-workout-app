@@ -1,5 +1,6 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
+import 'package:workouttrackerapps/dashboardd/pages/main_page.dart';
 import 'package:workouttrackerapps/exerciselogcrud/models/exercise.dart';
 import 'package:workouttrackerapps/exerciselogcrud/providers/exercise_provider.dart';
 import 'package:workouttrackerapps/exerciselogcrud/screens/exercise.dart';
@@ -8,20 +9,20 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final exerciseProvider = Provider.of<EntryProvider>(context);
+    final exerciseProvider = Provider.of<ExerciseProvider>(context);
     return Scaffold
     (
       appBar: AppBar
       (
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepPurple,
         leading: IconButton
         (
           color: Colors.black,
-          onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => MainPage())),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        title: Text('EXERCISE LOG', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        title: Text('EXERCISE LOG', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
         // actions: <Widget>
         // [
         //   Container
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
         //   )
         // ],
       ),
-      body: StreamBuilder<List<Entry>>(
+      body: StreamBuilder<List<Exercise>>(
           stream: exerciseProvider.entries,
           builder: (context, snapshot) {
             if (!snapshot.hasData)
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>
-                              EntryScreen(exercise: snapshot.data[index])));
+                              ExerciseScreen(exercise: snapshot.data[index])));
                     },
                   );
                 });
@@ -67,7 +68,7 @@ class HomeScreen extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => EntryScreen()));
+              .push(MaterialPageRoute(builder: (context) => ExerciseScreen()));
         },
       ),
     );

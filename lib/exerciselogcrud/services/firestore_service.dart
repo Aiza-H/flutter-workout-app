@@ -5,17 +5,17 @@ class FirestoreService {
     FirebaseFirestore _db = FirebaseFirestore.instance; 
 
     //Get Entries
-    Stream<List<Entry>> getEntries(){
+    Stream<List<Exercise>> getEntries(){
       return _db
         .collection('activity')
         .snapshots()
         .map((snapshot) => snapshot.docs
-        .map((doc) => Entry.fromJson(doc.data()))
+        .map((doc) => Exercise.fromJson(doc.data()))
         .toList());
     }
 
     //Update
-    Future<void> setEntry(Entry exercise){
+    Future<void> setExercise(Exercise exercise){
       var options = SetOptions(merge:true);
 
       return _db
@@ -25,9 +25,9 @@ class FirestoreService {
     }
 
     //Delete
-    Future<void> removeEntry(String exerciseId){
+    Future<void> removeExercise(String exerciseId){
       return _db
-        .collection('activitiy')
+        .collection('activity')
         .doc(exerciseId)
         .delete();
     }

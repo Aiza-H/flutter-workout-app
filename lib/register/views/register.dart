@@ -22,8 +22,8 @@ class _RegisterViewState extends State<Register> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final logo = Image.asset(
-      "assets/images/glogo.png",
-      height: mq.size.height / 4,
+      "assets/images/logo_transparent.png",
+      height: mq.size.height / 3,
     );
  
 
@@ -63,7 +63,7 @@ class _RegisterViewState extends State<Register> {
             color: Colors.white,
           ),
         ),
-        hintText: "something@example.com",
+        hintText: "something@gmail.com",
         labelText: "Email",
         labelStyle: TextStyle(
           color: Colors.white,
@@ -123,7 +123,7 @@ class _RegisterViewState extends State<Register> {
     );
 
     final fields = Padding(
-      padding: EdgeInsets.only(top: 10.0),
+      padding: EdgeInsets.only(top: 2.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[

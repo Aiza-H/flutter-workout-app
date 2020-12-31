@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:workouttrackerapps/newequipment/models/categories.dart';
-import 'package:workouttrackerapps/newequipment/models/equipments.dart';
+import 'package:workouttrackerapps/gymequipment/models/categories.dart';
+import 'package:workouttrackerapps/gymequipment/models/equipments.dart';
 
 
 class DBQuery {

@@ -20,7 +20,7 @@ class _LoginViewState extends State<Login> {
 
 
     final logo = Image.asset(
-      "assets/images/glogo.png",
+      "assets/images/logo_transparent.png",
       height: mq.size.height / 3,
     );
 
@@ -37,7 +37,7 @@ class _LoginViewState extends State<Login> {
             color: Colors.white,
           ),
         ),
-        hintText: "something@example.com",
+        hintText: "something@gmail.com",
         labelText: "Email",
         labelStyle: TextStyle(
           color: Colors.white,

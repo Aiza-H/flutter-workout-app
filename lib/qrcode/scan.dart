@@ -17,14 +17,14 @@ class _ScanPageState extends State<ScanPage> {
       appBar: AppBar
       (
         elevation: 0.0,
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.deepPurple,
         leading: IconButton
         (
           color: Colors.black,
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        title: Text('SCANNER', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        title: Text('SCANNER', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
         // actions: <Widget>
         // [
         //   Container
@@ -71,19 +71,10 @@ class _ScanPageState extends State<ScanPage> {
 
                 String codeSanner = await BarcodeScanner.scan();    //barcode scnner
                 
-                                setState(() {
-                                  qrCodeResult = codeSanner;
-                                });
-                                checkingValue(codeSanner);
-                                
-                
-                                // try{
-                                //   BarcodeScanner.scan()  ;  //this method is used to scan the QR code
-                                // }catch (e){
-                                //   BarcodeScanner.CameraAccessDenied;   //we can print that user has denied for the permisions
-                                //   BarcodeScanner.UserCanceled;   //we can print on the page that user has cancelled
-                                // }
-                
+                    setState(() {
+                       qrCodeResult = codeSanner;
+                     });
+                    checkingValue(codeSanner);
                 
                               },
                               child: Text(

@@ -1,5 +1,5 @@
-import 'package:workouttrackerapps/newequipment/components/card_category.dart';
-import 'package:workouttrackerapps/newequipment/screens/equipment_list.dart';
+import 'package:workouttrackerapps/gymequipment/components/card_category.dart';
+import 'package:workouttrackerapps/gymequipment/screens/equipment_list.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -20,14 +20,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar
       (
         elevation: 0.0,
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.deepPurple,
         leading: IconButton
         (
           color: Colors.black,
           onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
         ),
-        title: Text('WORKOUT SUGGESTION', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700)),
+        title: Text('WORKOUT SUGGESTION', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
         // actions: <Widget>
         // [
         //   Container
