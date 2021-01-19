@@ -20,7 +20,7 @@ class _LoginViewState extends State<Login> {
 
 
     final logo = Image.asset(
-      "assets/images/logo_transparent.png",
+      "assets/images/default.png",
       height: mq.size.height / 3,
     );
 
@@ -112,7 +112,7 @@ class _LoginViewState extends State<Login> {
       color: Colors.white,
       child: MaterialButton(
         minWidth: mq.size.width / 1.2,
-        padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
+        padding: EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 20.0),
         child: Text(
           "Login",
           textAlign: TextAlign.center,
@@ -186,7 +186,7 @@ class _LoginViewState extends State<Login> {
       backgroundColor: Color(0xFF651FFF),
       body: Form(
         key: _formKey,
-        child: SingleChildScrollView(
+        child: SingleChildScrollView( 
           padding: EdgeInsets.all(36),
           child: Container(
             height: mq.size.height,

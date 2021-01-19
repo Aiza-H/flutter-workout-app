@@ -22,7 +22,7 @@ class _RegisterViewState extends State<Register> {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final logo = Image.asset(
-      "assets/images/logo_transparent.png",
+      "assets/images/default.png",
       height: mq.size.height / 3,
     );
  
@@ -227,7 +227,7 @@ class _RegisterViewState extends State<Register> {
                 logo,
                 fields,
                 Padding(
-                  padding: EdgeInsets.only(bottom: 150),
+                  padding: EdgeInsets.only(bottom: 90),
                   child: bottom,
                 ),
               ],
